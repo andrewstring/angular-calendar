@@ -16,7 +16,6 @@ interface DateInfo {
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss'
 })
-
 export class CalendarComponent {
   
   dateInfo: DateInfo;
@@ -85,7 +84,6 @@ export class CalendarComponent {
       year: this.date.getFullYear()
     }
   }
-
 
   constructor() {
     this.dateInfo = this.getDateInfo()
