@@ -1,7 +1,36 @@
 <div class="topbar">
-    <mat-icon fontIcon="menu"></mat-icon>
-    <img src="../assets/icon.png">
+    <mat-icon fontIcon="menu" class="menu"></mat-icon>
+    <img src="assets/icon.png" class="icon">
     <h1>Calendar</h1>
-    <button class="today-button">Today</button>
+    <button class="today">Today</button>
+    <div class="directional">
+        <button><</button>
+        <button>></button>
+    </div>
+    <h2 class="monthYear">{{this.month}} {{this.year > 0 ? this.year : ""}}</h2>
+    <div class="button-with-label">
+        <mat-icon fontIcon="search" class="search"
+            (mouseenter)="this.handleMouse(0,true)"
+            (mouseleave)="this.handleMouse(0,false)"
+        ></mat-icon>
+        <label [class]="this.thing">Search</label>
+    </div>
+    <div class="button-with-label">
+        <mat-icon fontIcon="help" class="help"></mat-icon>
+        <label [class]="this.labelVisibility[1]">Help</label>
+    </div>
+    <div class="button-with-label">
+        <mat-icon fontIcon="settings" class="settings"></mat-icon>
+        <label [class]="this.labelVisibility[2]">Settings</label>
+    </div>
+    
+    <select>
+        <option value="day">Day</option>
+        <option value="week">Week</option>
+        <option value="month">Month</option>
+        <option value="year">Year</option>
+        <option value="schedule">Schedule</option>
+        <option value="4days">4 days</option>
+    </select>
 
 </div>

@@ -1,5 +1,8 @@
 <div class="outer">
-    <app-topbar />
+    <app-topbar
+        [month]="this.dateinfo.month"
+        [year]="this.dateinfo.year"
+    />
     <app-sidebar />
     <app-calendar />
 </div>
