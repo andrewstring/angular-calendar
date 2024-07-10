@@ -89,6 +89,12 @@ img {
     font-size: .8em;
     visibility: hidden;
 }
-.visible {
+.search:hover + label {
+    visibility: visible;
+}
+.help:hover + label {
+    visibility: visible;
+}
+.settings:hover + label {
     visibility: visible;
 }
