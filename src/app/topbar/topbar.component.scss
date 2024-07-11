@@ -98,3 +98,21 @@ img {
 .settings:hover + label {
     visibility: visible;
 }
+
+
+.dropdown-outer {
+    position: relative;
+}
+.dropdown-outer h3:hover + .dropdown {
+    visibility: visible;
+}
+.dropdown {
+    visibility: hidden;
+    background-color: red;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.dropdown button {
+    background-color: transparent;
+}

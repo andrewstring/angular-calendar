@@ -6,3 +6,21 @@
     height: 98.5vh;
     border-radius: 6px;
 }
+
+.split {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.appSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 20em;
+    padding: 2em .5em;
+}
+.appCalendar {
+    flex-grow: 1;
+}
