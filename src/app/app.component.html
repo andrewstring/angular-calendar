@@ -4,7 +4,13 @@
         [year]="this.dateinfo.year"
     />
     <div class="split">
-        <app-sidebar class="appSidebar"/>
-        <app-calendar class="appCalendar"/>
+        <app-sidebar
+            [month]="this.dateinfo.month"
+            [year]="this.dateinfo.year"
+        class="appSidebar"/>
+        <app-calendar
+            [month]="this.dateinfo.month"
+            [year]="this.dateinfo.year"
+        class="appCalendar"/>
     </div>
 </div>

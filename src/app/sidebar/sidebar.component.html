@@ -3,7 +3,10 @@
     <p>Create</p>
     <mat-icon fontIcon="arrow_drop_down"></mat-icon>
 </button>
-<app-minicalendar />
+<app-minicalendar
+    [month]="this.month"
+    [year]="this.year"
+/>
 <input type="text" placeholder="Search for people">
 <div class="myCalendars dropdown">
     <h2>My calendars</h2>

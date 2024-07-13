@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-minicalendar',
@@ -8,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './minicalendar.component.scss'
 })
 export class MinicalendarComponent {
+  @Input() month: string;
+  @Input() year: number;
+  currentMonth: string;
+  currentYear: number;
 
+  constructor() {
+    this.month = "";
+    this.year = 0;
+    this.currentMonth = "";
+    this.currentYear = 0;
+  }
+
+  ngOnInit() {
+    this.currentMonth = this.month;
+    this.currentYear = this.year;
+  }
 }

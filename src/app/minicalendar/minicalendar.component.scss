@@ -1,0 +1,20 @@
+p {
+    color: white;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+}
+.top-current {
+    flex-grow: 1;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+.main * {
+}

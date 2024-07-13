@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
@@ -8,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './calendar.component.scss'
 })
 export class CalendarComponent {
+  @Input() month: string;
+  @Input() year: number;
 
   constructor() {
+    this.month = "";
+    this.year = 0;
   }
 } 
