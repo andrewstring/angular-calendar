@@ -13,6 +13,23 @@
     font-size: 2.5em;
 }
 
+.dropdown-elem {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.dropdown-elem mat-icon {
+    color: white;
+    font-size: 1.2em;
+    width: auto;
+    height: auto;
+}
 .dropdown h2, .dropdown h3 {
     color: white;
+}
+.dropdown h2 {
+    font-size: 1em;
+}
+.dropdown h3 {
+    font-size: .8em;
 }
