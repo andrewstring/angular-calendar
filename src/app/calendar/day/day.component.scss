@@ -1,6 +1,12 @@
 .day {
     height: 100%;
     width: 100%;
-    background-color: green;
-    border: 1px solid blue;
+    background-color: rgb(28, 35, 42);
+    border: 1px solid white;
+}
+
+.day p {
+    text-align: center;
+    font-size: .8em;
+    color: white;
 }

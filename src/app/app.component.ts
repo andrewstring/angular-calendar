@@ -13,10 +13,35 @@ import { DateInfoService, DateInfo } from './services/dateInfo.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  dateinfo: DateInfo;
+
+  // State Vars
+  currentYear: number;
+  currentMonth: string;
+  currentMonthNum: number;
+  currentNumDays: number;
+
+  syncStateVars = () => {
+    this.currentYear = this.dateinfoService.dateInfo.currentYear;
+    this.currentMonth = this.dateinfoService.dateInfo.currentMonth;
+    this.currentMonthNum = this.dateinfoService.dateInfo.currentMonthNum;
+    this.currentNumDays = this.dateinfoService.dateInfo.currentNumDays;
+  }
+
+  handleForwardClick = () => {
+    this.dateinfoService.monthForwardHandler()
+    this.syncStateVars()
+  }
+  handleBackwardClick = () => {
+    this.dateinfoService.monthBackwardHandler()
+    this.syncStateVars()
+  }
 
   constructor(private dateinfoService: DateInfoService) {
-    this.dateinfo = dateinfoService.dateInfo
+    this.dateinfoService = dateinfoService
+    this.currentYear = this.dateinfoService.dateInfo.currentYear
+    this.currentMonth = this.dateinfoService.dateInfo.currentMonth
+    this.currentMonthNum = this.dateinfoService.dateInfo.currentMonthNum
+    this.currentNumDays = this.dateinfoService.dateInfo.currentNumDays
   }
 
   title = 'calendar';

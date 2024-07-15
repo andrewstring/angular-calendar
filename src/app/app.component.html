@@ -1,16 +1,17 @@
 <div class="outer">
     <app-topbar
-        [month]="this.dateinfo.month"
-        [year]="this.dateinfo.year"
+        [month]="this.currentMonth"
+        [year]="this.currentYear"
     class="appTopbar"/>
     <div class="split">
         <app-sidebar
-            [month]="this.dateinfo.month"
-            [year]="this.dateinfo.year"
+            [month]="this.currentMonth"
+            [year]="this.currentYear"
         class="appSidebar"/>
         <app-calendar
-            [month]="this.dateinfo.month"
-            [year]="this.dateinfo.year"
+                [month]="this.currentMonth"
+                [year]="this.currentYear"
+                [monthNum]="this.currentMonthNum"
         class="appCalendar"/>
     </div>
 </div>

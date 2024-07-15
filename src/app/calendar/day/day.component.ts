@@ -11,13 +11,10 @@ export class DayComponent {
 
   @Input() events?: any[];
   @Input() day?: string;
-  @Input() number?: number;
+  @Input() number: number;
 
   constructor() {
     this.events = [];
-    this.day = "MON";
-    this.number = 1;
+    this.number = 0;
   }
-
-
 }

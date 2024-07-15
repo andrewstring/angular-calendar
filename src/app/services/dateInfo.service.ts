@@ -5,7 +5,15 @@ export interface DateInfo {
   day: string,
   year: number,
   month: string,
+  monthNum: number,
   numDays: number,
+
+  // currentDate: number,
+  // currentDay: string,
+  currentYear: number,
+  currentMonth: string,
+  currentMonthNum: number,
+  currentNumDays: number
 }
 
 @Injectable({
@@ -15,55 +23,79 @@ export class DateInfoService {
 
   dateInfo: DateInfo;
   
-  monthInfo = [
+  static monthInfo = [
     {
       month: "January",
-      numDays: 31
+      currentMonth: "January",
+      numDays: 31,
+      currentNumDays: 31
     },
     {
       month: "February",
-      numDays: 28
+      currentMonth: "February",
+      numDays: 28,
+      currentNumDays: 28
     },
     {
       month: "March",
-      numDays: 31
+      currentMonth: "March",
+      numDays: 31,
+      currentNumDays: 31
     },
     {
       month: "April",
-      numDays: 30
+      currentMonth: "April",
+      numDays: 30,
+      currentNumDays: 30
     },
     {
       month: "May",
-      numDays: 31
+      currentMonth: "May",
+      numDays: 31,
+      currentNumDays: 31
     },
     {
       month: "June",
-      numDays: 30
+      currentMonth: "June",
+      numDays: 30,
+      currentNumDays: 30
     },
     {
       month: "July",
-      numDays: 31
+      currentMonth: "July",
+      numDays: 31,
+      currentNumDays: 31
     },
     {
       month: "August",
-      numDays: 31
+      currentMonth: "August",
+      numDays: 31,
+      currentNumDays: 31
     },
     {
       month: "September",
-      numDays: 30
+      currentMonth: "September",
+      numDays: 30,
+      currentNumDays: 30
     },
     {
       month: "October",
-      numDays: 31
+      currentMonth: "October",
+      numDays: 31,
+      currentNumDays: 31
     },
     {
       month: "November",
-      numDays: 30
+      currentMonth: "November",
+      numDays: 30,
+      currentNumDays: 30
     },
     {
       month: "December",
-      numDays: 31
-    },
+      currentMonth: "December",
+      numDays: 31,
+      currentNumDays: 31
+    }
   ]
 
   weekInfo = ["Sunday", "Monday", "Tuesday",
@@ -74,9 +106,37 @@ export class DateInfoService {
     return {
       date: date.getDate(),
       day: this.weekInfo[date.getDay()],
-      ...this.monthInfo[date.getMonth()],
-      year: date.getFullYear()
+      ...DateInfoService.monthInfo[date.getMonth()],
+      monthNum: date.getMonth(),
+      year: date.getFullYear(),
+      // currentDate: date.getDate(),
+      // currentDay: this.weekInfo[date.getDay()],
+      currentYear: date.getFullYear(),
+      currentMonthNum: date.getMonth()
     }
+  }
+
+  syncFromCurrentMonthNum = () => {
+    this.dateInfo.currentMonth = DateInfoService.monthInfo[this.dateInfo.currentMonthNum].currentMonth
+    this.dateInfo.currentNumDays = DateInfoService.monthInfo[this.dateInfo.currentMonthNum].numDays
+  }
+  monthForwardHandler= () => {
+    if(this.dateInfo.currentMonthNum > 10) {
+      this.dateInfo.currentMonthNum = 0
+      this.dateInfo.currentYear++;
+    } else {
+      this.dateInfo.currentMonthNum++;
+    }
+    this.syncFromCurrentMonthNum()
+  }
+  monthBackwardHandler = () => {
+    if (this.dateInfo.currentMonthNum < 1) {
+      this.dateInfo.currentMonthNum = 11
+      this.dateInfo.currentYear--;
+    } else {
+      this.dateInfo.currentMonthNum--;
+    }
+    this.syncFromCurrentMonthNum()
   }
 
   constructor() {
