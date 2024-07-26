@@ -10,7 +10,15 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class TopbarComponent {
   @Input() month: string;
+  // @Input() monthNum: number;
   @Input() year: number;
+
+  prevMonth = () => {
+    // this.monthNum++;
+  }
+  nextMonth = () => {
+    // this.monthNum--;
+  }
 
   constructor() {
     this.month = "";
